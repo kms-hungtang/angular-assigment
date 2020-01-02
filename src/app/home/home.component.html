@@ -1,0 +1,25 @@
+<app-header [logoUrl]="logoUrl" [avatarUrl]="avatarUrl" [email]="email" [menuItems]="menuItems">
+</app-header>
+<app-side-left-nav [leftNavItems]="leftNavItems"></app-side-left-nav>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Home</h1>
+            <h3 *ngIf="!user">Hello Guest</h3>
+            <div *ngIf="user">
+                <NgxHung-NgxHungDataUser [email]="email" [id]="user.id" [_token]="user._token"
+                    [_tokenExpirationDate]="user._tokenExpirationDate">
+                </NgxHung-NgxHungDataUser>
+            </div>
+            <jw-modal id="custom-modal-1">
+                <h1>You have logged-in successfully!</h1>
+                <h3>Your information:</h3>
+                <NgxHung-NgxHungDataUser [email]="email" [id]="user.id" [_token]="user._token"
+                    [_tokenExpirationDate]="user._tokenExpirationDate" *ngIf="user">
+                </NgxHung-NgxHungDataUser>
+                <button (click)="closeModal('custom-modal-1');">Close</button>
+            </jw-modal>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

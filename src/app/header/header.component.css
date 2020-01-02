@@ -1,0 +1,47 @@
+.icon-avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+.navbar-brand {
+    height: 80px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+/* Style the navigation bar */
+.navbar {
+  width: 100%;
+  background-color: #111;
+  position: relative;
+  top: 0;
+  z-index: 2;
+  border-radius: 0px !important;
+  border-bottom: 2px;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: #818181;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #f1f1f1;
+}
+
+.navbar li a {
+  padding-top: 27px;
+  height: 80px;
+}
+
+#navbarDropdown{
+  padding-top: 15px;
+}

@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink='home'><img src="{{logoUrl}}" alt="logo" width="50"></a>
+      
+    </div>
+    <ul class="nav navbar-nav" *ngFor="let menuItem of menuItems; let i of index">
+      <li routerLinkActive="active"><a>{{menuItem}}</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right ml-auto nav-flex-icons">
+      <li *ngIf="!isLogined">
+        <a routerLink='/authenticate'>Signup / Signin</a>
+      </li>
+      <li class="nav-item dropdown dropdown-menu-right avatar" appDropDown *ngIf= "isLogined">
+        <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img class="icon-avatar" src="{{avatarUrl}}">
+          <span class="user">{{email}}</span>
+        </a>
+        <ul class="dropdown-menu" >
+          <li><a style="cursor: pointer;">My Profile page</a></li>
+          <li><a style="cursor: pointer;" (click)="onLogout()">Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
